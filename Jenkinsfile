@@ -6,6 +6,7 @@ pipeline {
             steps {
                 sh """
                     pip3 install -r lambda-app/tests/requirements.txt --break-system-packages
+                    export PATH="$PATH:/var/lib/jenkins/.local/bin"
                 """
             }
         }
