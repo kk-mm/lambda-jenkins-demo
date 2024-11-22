@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Setup') {
             steps {
-                sh "pip3 install -r lambda-app/tests/requirements.txt"
+                sh """
+                    python3 -m venv venv
+                    source venv/bin/activate
+                    pip3 install -r lambda-app/tests/requirements.txt
+                """
             }
         }
         stage('Test') {
