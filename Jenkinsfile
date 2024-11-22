@@ -5,7 +5,7 @@ pipeline {
         stage('Setup') {
             steps {
                 sh """
-                    pip3 install -r lambda-app/tests/requirements.txt
+                    pip3 install -r lambda-app/tests/requirements.txt --break-system-packages
                 """
             }
         }
