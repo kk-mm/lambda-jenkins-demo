@@ -12,6 +12,8 @@ pipeline {
         }
         stage('Test') {
             steps {
+                echo "Pytest path..."
+                sh "which pytest"
                 sh "pytest"
             }
         }
